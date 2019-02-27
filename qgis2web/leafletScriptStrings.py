@@ -333,7 +333,7 @@ def wmsScript(layer, safeLayerName, useWMS, useWMTS, identify):
         getFeatureInfo = ""
         if not identify:
             getFeatureInfo = """,
-            identify: false,"""
+            identify: false"""
         wms = """
         var layer_%s = L.WMS.layer("%s", "%s", {
             format: '%s',
@@ -461,7 +461,7 @@ def addressSearchScript():
         document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
         .className += ' fa fa-search';
         document.getElementsByClassName('leaflet-control-geocoder-icon')[0]
-        .title += 'Search for a place';
+        .title += 'Procurar um local';
         """
     return addressSearch
 

@@ -3720,6 +3720,7 @@ i18n.registerMethods = function (helpers, req) {
 };
 
 i18n.prototype = {
+    
 	defaultLocale: "en",
 	extension: ".js",
 	directory: "./locales",
@@ -6537,7 +6538,35 @@ module.exports = {
 // English i18n translations
 
 module.exports = {
-  'measure': 'Measure',
+ 'measure': 'Medições',
+  'measureDistancesAndAreas': 'Medir distâncias e áreas',
+  'createNewMeasurement': 'Criar uma nova medição',
+  'startCreating': 'Adicione pontos no mapa, para criar uma nova medição',
+  'finishMeasurement': 'Finalizar medição',
+  'lastPoint': 'Último ponto',
+  'area': 'Área',
+  'perimeter': 'Perímetro',
+  'pointLocation': 'Localização do ponto',
+  'areaMeasurement': 'Medição da área',
+  'linearMeasurement': 'Medição linear',
+  'pathDistance': 'Distância',
+  'centerOnArea': 'Centrar nesta área',
+  'centerOnLine': 'Centrar nesta linha',
+  'centerOnLocation': 'Centrar nesta localização',
+  'cancel': 'Cancelar',
+  'delete': 'Eliminar',
+  'acres': 'Acres',
+  'feet': 'Pés',
+  'kilometers': 'Kilômetros',
+  'hectares': 'Hectares',
+  'meters': 'Metros',
+  'miles': 'Milhas',
+  'sqfeet': 'Pés²',
+  'sqmeters': 'Metros²',
+  'sqmiles': 'Milhas²',
+  'decPoint': ',',
+  'thousandsSep': '.'    
+ /* 'measure': 'Measure',
   'measureDistancesAndAreas': 'Measure distances and areas',
   'createNewMeasurement': 'Create a new measurement',
   'startCreating': 'Start creating a measurement by adding points to the map',
@@ -6564,7 +6593,7 @@ module.exports = {
   'sqmeters': 'Sq Meters',
   'sqmiles': 'Sq Miles',
   'decPoint': '.',
-  'thousandsSep': ','
+  'thousandsSep': ','*/
 };
 
 },{}],31:[function(require,module,exports){
@@ -6883,7 +6912,7 @@ module.exports = {
 };
 
 },{}],40:[function(require,module,exports){
-// en.js
+// pt.js
 // portuguese i18n translations
 
 module.exports = {
