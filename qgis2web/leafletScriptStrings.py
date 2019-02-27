@@ -331,6 +331,7 @@ def wmsScript(layer, safeLayerName, useWMS, useWMTS, identify):
         wms_layer = d['layers'][0]
         wms_format = d['format'][0]
         getFeatureInfo = ""
+        #https://github.com/tomchadwin/qgis2web/issues/723        
         if not identify:
             getFeatureInfo = """,
             identify: false"""
