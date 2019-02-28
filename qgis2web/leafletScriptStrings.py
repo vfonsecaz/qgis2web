@@ -163,9 +163,9 @@ def mapScript(extent, matchCRS, crsAuthId, measure, maxZoom, minZoom, bounds,
         .className += ' fas fa-ruler';
         """ % options
         
-        map +="""
-        var basemap0 = L.tileLayer.wms( "http://sig/geoMealhada/wms",{layers: 'mealhada:ortofotomapas2015'}).addTo(map);       
-        """
+        #map +="""
+        #map.addLayer(basemap0);
+        #"""
     return map
 
 
@@ -405,15 +405,19 @@ def titleSubScript(webmap_head):
 def addLayersList(basemapList, matchCRS, layer_list, cluster, legends,
                   collapsed):
     
+    controlStart = """var basemap0 = L.tileLayer.wms( "http://sig/geoMealhada/wms",{layers: 'mealhada:ortofotomapas2015'})"""
+
     #controlStart = """var basemap0 = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors,<a #href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',maxZoom: 28});
     #    basemap0.addTo(map);"""
     
+    #basemap = """L.tileLayer.wms( "http://sig/geoMealhada/wms",{layers: 'mealhada:ortofotomapas2015'})"""       
+    
     if len(basemapList) < 2 or matchCRS:
-        controlStart = """
-        var baseMaps = {};"""
+        controlStart += """
+        var baseMaps = {"Ortos": basemap0};"""
     else:
         comma = ""
-        controlStart = """
+        controlStart += """
         var baseMaps = {"""
         for count, basemap in enumerate(basemapList):
             controlStart += comma + "'" + unicode(basemap)
@@ -451,6 +455,7 @@ def addLayersList(basemapList, matchCRS, layer_list, cluster, legends,
     if collapsed:
         controlEnd += ",{collapsed:false}"
     controlEnd += ").addTo(map);"
+    controlEnd +="map.addLayer(basemap0);"
     layersList += controlEnd
     return layersList
 
