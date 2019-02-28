@@ -272,7 +272,7 @@ def writeCSS(cssStore, backgroundColor, feedback, widgetAccent,
             padding-right: 10px;
         }
         .leaflet-popup-content {
-            width:auto !important;
+            /*width:auto !important;*/
             padding-right:10px;
         }
         .leaflet-tooltip {
