@@ -279,6 +279,7 @@ def getPopups(layer, safeLayerName, highlight, popupsOnHover, popup, vts):
         tablestart = "'<table>\\"
         row = ""
         for field, val in zip(field_names, field_vals):
+            val = 'inline label'
             fieldIndex = fields.indexFromName(unicode(field))
             editorWidget = layer.editorWidgetSetup(fieldIndex).type()
 
