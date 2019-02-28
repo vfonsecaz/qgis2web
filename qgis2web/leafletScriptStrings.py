@@ -162,6 +162,10 @@ def mapScript(extent, matchCRS, crsAuthId, measure, maxZoom, minZoom, bounds,
         document.getElementsByClassName('leaflet-control-measure-toggle')[0]
         .className += ' fas fa-ruler';
         """ % options
+        
+        map +="""
+        var basemap0 = L.tileLayer.wms( "http://sig/geoMealhada/wms",{layers: 'mealhada:ortofotomapas2015'}).addTo(map);       
+        """
     return map
 
 
@@ -335,6 +339,9 @@ def wmsScript(layer, safeLayerName, useWMS, useWMTS, identify):
         if not identify:
             getFeatureInfo = """,
             identify: false"""
+        else:
+            getFeatureInfo = """,
+            identify: true"""
         wms = """
         var layer_%s = L.WMS.layer("%s", "%s", {
             format: '%s',
@@ -397,6 +404,10 @@ def titleSubScript(webmap_head):
 
 def addLayersList(basemapList, matchCRS, layer_list, cluster, legends,
                   collapsed):
+    
+    #controlStart = """var basemap0 = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors,<a #href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',maxZoom: 28});
+    #    basemap0.addTo(map);"""
+    
     if len(basemapList) < 2 or matchCRS:
         controlStart = """
         var baseMaps = {};"""
